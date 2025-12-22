@@ -162,6 +162,46 @@ main {
     box-shadow: 0 4px 12px rgba(255, 221, 0, 0.4);
 }
 
+.app-store-button {
+    display: inline-block;
+    background: #2E7DF6;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-top: 16px;
+    box-shadow: 0 2px 8px rgba(46, 125, 246, 0.3);
+}
+
+.app-store-button:hover {
+    background: #1a6de0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 125, 246, 0.4);
+}
+
+.app-store-link {
+    display: inline-block;
+    background: #2E7DF6;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-top: 12px;
+    box-shadow: 0 2px 8px rgba(46, 125, 246, 0.3);
+}
+
+.app-store-link:hover {
+    background: #1a6de0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 125, 246, 0.4);
+}
+
 .modals-container {
     position: relative;
     z-index: 1000;
