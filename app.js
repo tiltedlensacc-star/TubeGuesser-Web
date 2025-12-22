@@ -4,11 +4,16 @@ class AppUI {
         this.timerInterval = null;
         this.elements = {};
         this.currentHintDisplayed = null; // 'trivia' or 'location'
+        this.titleClickCount = 0;
+        this.titleClickTimeout = null;
         this.initElements();
         this.attachEventListeners();
     }
 
     initElements() {
+        // Header
+        this.elements.title = document.querySelector('h1');
+
         // Screens
         this.elements.welcomeScreen = document.getElementById('welcome-screen');
         this.elements.gameScreen = document.getElementById('game-screen');
@@ -39,12 +44,12 @@ class AppUI {
         this.elements.statsBtn = document.getElementById('stats-btn');
         this.elements.howToPlayBtn = document.getElementById('how-to-play-btn');
         this.elements.viewStatsBtn = document.getElementById('view-stats-btn');
-        this.elements.resetBtn = document.getElementById('reset-btn');
+        // this.elements.resetBtn = document.getElementById('reset-btn');
 
         // Header buttons
         this.elements.statsBtnHeader = document.getElementById('stats-btn-header');
         this.elements.howToPlayBtnHeader = document.getElementById('how-to-play-btn-header');
-        this.elements.resetBtnHeader = document.getElementById('reset-btn-header');
+        // this.elements.resetBtnHeader = document.getElementById('reset-btn-header');
         this.elements.headerButtons = document.querySelector('.header-buttons');
 
         // Modals
@@ -73,12 +78,12 @@ class AppUI {
         this.elements.statsBtn.addEventListener('click', () => this.showStatsModal());
         this.elements.viewStatsBtn.addEventListener('click', () => this.showStatsModal());
         this.elements.howToPlayBtn.addEventListener('click', () => this.showHowToPlayModal());
-        this.elements.resetBtn.addEventListener('click', () => this.resetGame());
+        // this.elements.resetBtn.addEventListener('click', () => this.resetGame());
 
         // Header button listeners
         this.elements.statsBtnHeader.addEventListener('click', () => this.showStatsModal());
         this.elements.howToPlayBtnHeader.addEventListener('click', () => this.showHowToPlayModal());
-        this.elements.resetBtnHeader.addEventListener('click', () => this.resetGame());
+        // this.elements.resetBtnHeader.addEventListener('click', () => this.resetGame());
 
         this.elements.closeStatsBtn.addEventListener('click', () => this.hideStatsModal());
         this.elements.closeHowToPlayBtn.addEventListener('click', () => this.hideHowToPlayModal());
@@ -90,6 +95,29 @@ class AppUI {
         this.elements.howToPlayModal.addEventListener('click', (e) => {
             if (e.target === this.elements.howToPlayModal) this.hideHowToPlayModal();
         });
+
+        // Hidden reset feature - click title 5 times
+        this.elements.title.addEventListener('click', () => this.handleTitleClick());
+    }
+
+    handleTitleClick() {
+        this.titleClickCount++;
+
+        // Clear existing timeout
+        if (this.titleClickTimeout) {
+            clearTimeout(this.titleClickTimeout);
+        }
+
+        // Reset counter after 2 seconds of no clicks
+        this.titleClickTimeout = setTimeout(() => {
+            this.titleClickCount = 0;
+        }, 2000);
+
+        // If clicked 5 times, reset the game
+        if (this.titleClickCount >= 5) {
+            this.titleClickCount = 0;
+            this.resetGame();
+        }
     }
 
     showScreen(screen) {

@@ -37,6 +37,8 @@ h1 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0;
+    cursor: pointer;
+    user-select: none;
 }
 
 .header-buttons {
@@ -139,7 +141,7 @@ main {
 .support-text {
     color: #ffffff;
     font-size: 0.95rem;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     font-weight: 500;
 }
 
@@ -163,43 +165,48 @@ main {
 }
 
 .app-store-button {
-    display: inline-block;
-    background: #2E7DF6;
-    color: white;
+    display: block !important;
+    background: white;
+    color: #2E7DF6;
     padding: 12px 28px;
     border-radius: 8px;
     font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s;
-    margin-top: 16px;
-    box-shadow: 0 2px 8px rgba(46, 125, 246, 0.3);
+    margin: 16px auto 0;
+    max-width: fit-content;
+    width: fit-content;
+    border: 2px solid #2E7DF6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .app-store-button:hover {
-    background: #1a6de0;
+    background: #f8f9fa;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(46, 125, 246, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .app-store-link {
     display: inline-block;
-    background: #2E7DF6;
-    color: white;
+    background: white;
+    color: #2E7DF6;
     padding: 12px 28px;
     border-radius: 8px;
     font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s;
-    margin-top: 12px;
-    box-shadow: 0 2px 8px rgba(46, 125, 246, 0.3);
+    margin-top: 20px;
+    margin-left: 16px;
+    border: 2px solid #2E7DF6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .app-store-link:hover {
-    background: #1a6de0;
+    background: #f8f9fa;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(46, 125, 246, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .modals-container {
