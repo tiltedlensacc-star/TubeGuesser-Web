@@ -1,0 +1,334 @@
+{
+  "tubeLines": [
+    { "name": "Bakerloo", "colorCode": "#996633" },
+    { "name": "Central", "colorCode": "#DC241F" },
+    { "name": "Circle", "colorCode": "#FFD320" },
+    { "name": "District", "colorCode": "#007D32" },
+    { "name": "Hammersmith & City", "colorCode": "#D799AF" },
+    { "name": "Jubilee", "colorCode": "#6A7278" },
+    { "name": "Metropolitan", "colorCode": "#751056" },
+    { "name": "Northern", "colorCode": "#000000" },
+    { "name": "Piccadilly", "colorCode": "#2E7DF6" },
+    { "name": "Victoria", "colorCode": "#00A0E2" },
+    { "name": "Elizabeth", "colorCode": "#6950A1" },
+    { "name": "DLR", "colorCode": "#00AFAD" },
+    { "name": "Overground", "colorCode": "#E86A10" },
+    { "name": "Waterloo & City", "colorCode": "#76D0BD" },
+    { "name": "Tram", "colorCode": "#84B817" },
+    { "name": "National Rail", "colorCode": "#000080" }
+  ],
+  "stations": [
+    {
+      "name": "King's Cross St. Pancras",
+      "lines": ["Circle", "Hammersmith & City", "Metropolitan", "Northern", "Piccadilly", "Victoria", "National Rail"],
+      "trivia": "Here you can find platforms for both the Eurostar and the Hogwarts Express.",
+      "location": "North London"
+    },
+    {
+      "name": "Liverpool Street",
+      "lines": ["Circle", "Hammersmith & City", "Central", "Metropolitan", "Elizabeth"],
+      "trivia": "Situated near a famously historic market, containing a herd of metal elephants.",
+      "location": "Central London"
+    },
+    {
+      "name": "Oxford Circus",
+      "lines": ["Bakerloo", "Central", "Victoria"],
+      "trivia": "Located at the intersection of one of the busiest shopping areas in Europe.",
+      "location": "Central London"
+    },
+    {
+      "name": "Bond Street",
+      "lines": ["Central", "Jubilee", "Elizabeth"],
+      "trivia": "One of the world's most famous luxury shopping destinations, home to brands like Chanel, Louis Vuitton, Cartier, and Sotheby's auction house.",
+      "location": "Central London"
+    },
+    {
+      "name": "Green Park",
+      "lines": ["Jubilee", "Piccadilly", "Victoria"],
+      "trivia": "Near a park that is unusual in that it has no permanent statues or buildings, just memorials.",
+      "location": "Central London"
+    },
+    {
+      "name": "Leicester Square",
+      "lines": ["Northern", "Piccadilly"],
+      "trivia": "Alight here for cinemas and restaurants in the heart of London's West End theatre district.",
+      "location": "Central London"
+    },
+    {
+      "name": "Piccadilly Circus",
+      "lines": ["Bakerloo", "Piccadilly"],
+      "trivia": "Famous for its neon signs and the Shaftesbury Memorial Fountain with its statue of Anteros, often mistaken for Eros.",
+      "location": "Central London"
+    },
+    {
+      "name": "Victoria",
+      "lines": ["Circle", "District", "Victoria", "National Rail"],
+      "trivia": "Contrary to popular belief, this station was not named after a famous monarch.",
+      "location": "Central London"
+    },
+    {
+      "name": "Waterloo",
+      "lines": ["Bakerloo", "Jubilee", "Northern", "Waterloo & City", "National Rail"],
+      "trivia": "The UK's busiest railway station by passenger usage.",
+      "location": "South London"
+    },
+    {
+      "name": "London Bridge",
+      "lines": ["Jubilee", "Northern", "National Rail"],
+      "trivia": "The oldest railway terminus in London, opened in 1836.",
+      "location": "South London"
+    },
+    {
+      "name": "Bank",
+      "lines": ["Central", "Northern", "Waterloo & City", "DLR"],
+      "trivia": "This forms a complex with Monument station and serves the City of London.",
+      "location": "Central London"
+    },
+    {
+      "name": "Westminster",
+      "lines": ["Circle", "District", "Jubilee"],
+      "trivia": "Alight here for Big Ben and the Houses of Parliament",
+      "location": "Central London"
+    },
+    {
+      "name": "Embankment",
+      "lines": ["Bakerloo", "Circle", "District", "Northern"],
+      "trivia": "The only place on the Underground where you can still hear \"Mind the Gap\" announced by Oswald Laurence",
+      "location": "Central London"
+    },
+    {
+      "name": "Charing Cross",
+      "lines": ["Bakerloo", "Northern"],
+      "trivia": "Traditionally considered the center of London for distance measurements.",
+      "location": "Central London"
+    },
+    {
+      "name": "Tottenham Court Road",
+      "lines": ["Central", "Northern", "Elizabeth"],
+      "trivia": "Its name has nothing to do with a famous north London football club.",
+      "location": "Central London"
+    },
+    {
+      "name": "Holborn",
+      "lines": ["Central", "Piccadilly"],
+      "trivia": "Named after the nearby River Fleet, it serves the legal district of London.",
+      "location": "Central London"
+    },
+    {
+      "name": "Euston",
+      "lines": ["Northern", "Victoria", "Overground"],
+      "trivia": "The main London terminus for trains to the midlands, North West and Scotland.",
+      "location": "North London"
+    },
+    {
+      "name": "Earl's Court",
+      "lines": ["District", "Piccadilly"],
+      "trivia": "Once home to a famous exhibition center, it's a major interchange station serving West London.",
+      "location": "West London"
+    },
+    {
+      "name": "South Kensington",
+      "lines": ["Circle", "District", "Piccadilly"],
+      "trivia": "Alight here for Museum Row.",
+      "location": "West London"
+    },
+    {
+      "name": "Notting Hill Gate",
+      "lines": ["Central", "Circle", "District"],
+      "trivia": "Alight here for row of colourful houses and Portobello Road Market.",
+      "location": "West London"
+    },
+    {
+      "name": "Baker Street",
+      "lines": ["Bakerloo", "Circle", "Hammersmith & City", "Jubilee", "Metropolitan"],
+      "trivia": "Alight here for the fictional home of Sherlock Holmes.",
+      "location": "Central London"
+    },
+    {
+      "name": "Paddington",
+      "lines": ["Bakerloo", "Circle", "District", "Hammersmith & City", "Elizabeth", "National Rail"],
+      "trivia": "A famous fictional bear is named after this station.",
+      "location": "West London"
+    },
+    {
+      "name": "Edgware Road",
+      "lines": ["Bakerloo", "Circle", "District", "Hammersmith & City"],
+      "trivia": "Actually two physically separate stations amidst a large middle eastern community.",
+      "location": "West London"
+    },
+    {
+      "name": "Mile End",
+      "lines": ["Central", "District", "Hammersmith & City"],
+      "trivia": "Named after its location, it's one mile from the old City of London boundary at Aldgate.",
+      "location": "East London"
+    },
+    {
+      "name": "Finchley Road",
+      "lines": ["Jubilee", "Metropolitan"],
+      "trivia": "Serves the affluent areas of Swiss Cottage, St. John's Wood and Hampstead.",
+      "location": "North London"
+    },
+    {
+      "name": "Hammersmith",
+      "lines": ["Circle", "District", "Hammersmith & City", "Piccadilly"],
+      "trivia": "Near a famous suspension bridge that was deemed too weak to support cars and pedestrianised.",
+      "location": "West London"
+    },
+    {
+      "name": "Stockwell",
+      "lines": ["Northern", "Victoria"],
+      "trivia": "Serves as an important interchange between North and South London.",
+      "location": "South London"
+    },
+    {
+      "name": "Balham",
+      "lines": ["Northern", "National Rail"],
+      "trivia": "Known as the 'Gateway to the South', this station serves both Underground and National Rail services in South London.",
+      "location": "South London"
+    },
+    {
+      "name": "Clapham Junction",
+      "lines": ["National Rail", "Overground"],
+      "trivia": "Britain's busiest railway station by train movements, handling over 2,000 trains per day with no Underground connection.",
+      "location": "South London"
+    },
+    {
+      "name": "Finsbury Park",
+      "lines": ["Piccadilly", "Victoria"],
+      "trivia": "Serves a major music venue and one of North London's largest green spaces, popular for festivals and events.",
+      "location": "North London"
+    },
+    {
+      "name": "Barking",
+      "lines": ["District", "Hammersmith & City", "Overground"],
+      "trivia": "This East London station was the terminus of the world's first electric tube railway when it opened in 1902.",
+      "location": "East London"
+    },
+    {
+      "name": "West Ham",
+      "lines": ["Jubilee", "District", "DLR", "Hammersmith & City"],
+      "trivia": "Forever Blowing Bubbles",
+      "location": "East London"
+    },
+    {
+      "name": "Moorgate",
+      "lines": ["Circle", "Hammersmith & City", "Metropolitan", "Northern", "National Rail"],
+      "trivia": "Named after one of the ancient gates in the London Wall, this station serves the financial district.",
+      "location": "Central London"
+    },
+    {
+      "name": "Acton Town",
+      "lines": ["District", "Piccadilly"],
+      "trivia": "An important junction title meaning Oak Town",
+      "location": "West London"
+    },
+    {
+      "name": "Ealing Common",
+      "lines": ["District", "Piccadilly"],
+      "trivia": "This area earned the nickname \"The Queen of the Suburbs\"",
+      "location": "West London"
+    },
+    {
+      "name": "Farringdon",
+      "lines": ["Circle", "Hammersmith & City", "Metropolitan", "Elizabeth", "National Rail"],
+      "trivia": "A major Elizabeth line hub connecting to Thameslink services, serving the historic Smithfield Market area.",
+      "location": "Central London"
+    },
+    {
+      "name": "Whitechapel",
+      "lines": ["District", "Hammersmith & City", "Elizabeth"],
+      "trivia": "Historic East London station famous for its connection to Jack the Ripper.",
+      "location": "East London"
+    },
+    {
+      "name": "Canary Wharf",
+      "lines": ["Jubilee", "Elizabeth", "DLR"],
+      "trivia": "London's financial district skyscraper hub surrounded by waterways.",
+      "location": "East London"
+    },
+    {
+      "name": "Stratford",
+      "lines": ["Central", "Jubilee", "Elizabeth", "DLR"],
+      "trivia": "Received a massive upgrade for the 2012 Olympic Games.",
+      "location": "East London"
+    },
+    {
+      "name": "Tower Hill",
+      "lines": ["Circle", "District"],
+      "trivia": "A lesser known station, it serves the iconic Tower of London and Tower Bridge.",
+      "location": "Central London"
+    },
+    {
+      "name": "Custom House",
+      "lines": ["Elizabeth", "DLR"],
+      "trivia": "Modern interchange station serving the ExCeL London exhibition center and London City Airport area.",
+      "location": "East London"
+    },
+    {
+      "name": "Highbury & Islington",
+      "lines": ["Victoria", "Overground", "National Rail"],
+      "trivia": "Named after the two main areas it serves.",
+      "location": "North London"
+    },
+    {
+      "name": "Canada Water",
+      "lines": ["Jubilee", "Overground"],
+      "trivia": "One of two stations with another country in its name.",
+      "location": "South East London"
+    },
+    {
+      "name": "Richmond",
+      "lines": ["District", "Overground"],
+      "trivia": "Alight here if you want to go deer-spotting.",
+      "location": "South West London"
+    },
+    {
+      "name": "Wimbledon",
+      "lines": ["District", "Tram"],
+      "trivia": "Famous worldwide for its tennis championships",
+      "location": "South West London"
+    },
+    {
+      "name": "Willesden Junction",
+      "lines": ["Bakerloo", "Overground"],
+      "trivia": "Originally known as \"The Wilderness\" due to its complex network of entrances and passages",
+      "location": "North West London"
+    },
+    {
+      "name": "West Brompton",
+      "lines": ["District", "Overground"],
+      "trivia": "It's got a compass direction in the name.",
+      "location": "West London"
+    },
+    {
+      "name": "Kensington Olympia",
+      "lines": ["District", "Overground"],
+      "trivia": "Once home to a major exhibition center and events venue, now serves residential West London with connections to both Underground and Overground services.",
+      "location": "West London"
+    },
+    {
+      "name": "Shepherd's Bush",
+      "lines": ["Central", "Overground"],
+      "trivia": "A major West London transport hub serving the shopping and entertainment district, including the famous Westfield shopping center.",
+      "location": "West London"
+    },
+    {
+      "name": "Ealing Broadway",
+      "lines": ["Central", "District", "Elizabeth"],
+      "trivia": "The western terminus of the Central line and a major Elizabeth line station, serving as a key transport hub for West London and beyond.",
+      "location": "West London"
+    },
+    {
+      "name": "Shadwell",
+      "lines": ["DLR", "Overground"],
+      "trivia": "Historic East London station in the heart of the former docklands.",
+      "location": "East London"
+    },
+    {
+      "name": "Warren Street",
+      "lines": ["Northern", "Victoria"],
+      "trivia": "Named after a developer who built houses in the area, it serves the bustling Fitzrovia district near the BBC Broadcasting House.",
+      "location": "Central London"
+    }
+  ]
+}

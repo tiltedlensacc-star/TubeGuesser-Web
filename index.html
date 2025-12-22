@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TubeGuesser - Daily London Underground Station Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TubeGuesser</h1>
+            <div class="header-buttons">
+                <button id="how-to-play-btn-header" class="icon-btn-header">How to Play</button>
+                <button id="stats-btn-header" class="icon-btn-header">Stats</button>
+                <button id="reset-btn-header" class="icon-btn-header">Reset</button>
+            </div>
+        </header>
+
+        <main id="game-container">
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="screen">
+                <div class="welcome-content">
+                    <p class="welcome-question">Can you guess the tube station from its lines?</p>
+                    <p class="welcome-date" id="welcome-date"></p>
+                    <button id="start-game-btn" class="primary-btn">Start Today's Game</button>
+                    <div class="welcome-buttons">
+                        <button id="how-to-play-btn" class="icon-btn">How to Play</button>
+                        <button id="stats-btn" class="icon-btn">Stats</button>
+                        <button id="reset-btn" class="icon-btn">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Screen -->
+            <div id="game-screen" class="screen hidden">
+                <div class="timer-container">
+                    <div class="timer" id="timer">00:00</div>
+                </div>
+
+                <div class="lines-container" id="lines-container">
+                    <!-- Tube lines will be inserted here -->
+                </div>
+
+                <div class="input-section">
+                    <div class="input-header">
+                        <div class="input-label">What station are you at?</div>
+                        <div class="guesses-remaining">
+                            <span id="guesses-remaining">5</span> guesses remaining
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <input
+                            type="text"
+                            id="guess-input"
+                            placeholder="Type station name..."
+                            autocomplete="off"
+                        >
+                        <button id="submit-guess-btn" class="primary-btn">Guess</button>
+                    </div>
+                </div>
+
+                <div class="hints-container">
+                    <button id="location-hint-btn" class="hint-btn" disabled>
+                        <span class="hint-lock">🔒</span> Show Location (1 guess)
+                    </button>
+                    <button id="hint-btn" class="hint-btn" disabled>
+                        <span class="hint-lock">🔒</span> Show Hint (3 guesses)
+                    </button>
+                </div>
+
+                <div id="hint-display" class="hint-display hidden"></div>
+
+                <div class="guesses-list" id="guesses-list">
+                    <!-- Previous guesses will appear here -->
+                </div>
+            </div>
+
+            <!-- Completed Screen -->
+            <div id="completed-screen" class="screen hidden">
+                <div class="result-container">
+                    <p class="next-game-text">Come back tomorrow for a new station!</p>
+                    <div id="result-icon"></div>
+                    <h2 id="result-title"></h2>
+                    <div id="result-station" class="station-reveal"></div>
+
+                    <div class="result-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="result-guesses">-</div>
+                            <div class="stat-label">Guesses</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="result-time">-</div>
+                            <div class="stat-label">Time</div>
+                        </div>
+                    </div>
+
+                    <div class="result-lines" id="result-lines"></div>
+
+                    <button id="view-stats-btn" class="primary-btn">View Stats</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="support-section-outside">
+        <p class="support-text">Want to support TubeGuesser?</p>
+        <a href="https://buymeacoffee.com/tubeguessr" target="_blank" rel="noopener noreferrer" class="bmc-button">
+            ☕ Buy Me a Coffee
+        </a>
+    </div>
+
+    <!-- Modals Container -->
+    <div class="modals-container">
+        <!-- Stats Modal -->
+        <div id="stats-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Statistics</h2>
+                    <button class="close-btn" id="close-stats-btn">&times;</button>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number" id="total-games">0</div>
+                        <div class="stat-title">Played</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="win-rate">0</div>
+                        <div class="stat-title">Win %</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="current-streak">0</div>
+                        <div class="stat-title">Current Streak</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="max-streak">0</div>
+                        <div class="stat-title">Max Streak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Play Modal -->
+        <div id="how-to-play-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>How to Play</h2>
+                    <button class="close-btn" id="close-how-to-play-btn">&times;</button>
+                </div>
+                <div class="how-to-play-content">
+                    <p>Guess the mystery London Underground station in 5 tries.</p>
+                    <ul>
+                        <li>You'll see which Tube lines serve the mystery station</li>
+                        <li>Type your guess and press Enter or click Guess</li>
+                        <li>You have 5 attempts to get it right</li>
+                        <li>Use hints if you get stuck (trivia or location)</li>
+                        <li>A new station appears every day at midnight</li>
+                    </ul>
+                    <p><strong>Example:</strong> If you see Central, District, and Circle lines, it could be Notting Hill Gate!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modals Container -->
+
+    <script src="game.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
