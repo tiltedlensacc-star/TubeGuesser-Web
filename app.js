@@ -153,6 +153,14 @@ class AppUI {
         this.showScreen('game');
         this.renderGameScreen();
         this.startTimer();
+
+        // Track game start
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'game_started', {
+                'event_category': 'game',
+                'event_label': 'daily_game'
+            });
+        }
     }
 
     renderGameScreen() {
@@ -328,6 +336,15 @@ class AppUI {
             this.elements.hintDisplay.textContent = gameManager.currentGame.station.trivia;
             this.elements.hintDisplay.classList.remove('hidden');
             this.updateHintButtons();
+
+            // Track hint usage
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'hint_used', {
+                    'event_category': 'game',
+                    'event_label': 'trivia_hint',
+                    'guesses_made': game.guesses.length
+                });
+            }
         }
     }
 
@@ -346,6 +363,15 @@ class AppUI {
             this.elements.hintDisplay.textContent = `Location: ${gameManager.currentGame.station.location}`;
             this.elements.hintDisplay.classList.remove('hidden');
             this.updateHintButtons();
+
+            // Track location hint usage
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'hint_used', {
+                    'event_category': 'game',
+                    'event_label': 'location_hint',
+                    'guesses_made': game.guesses.length
+                });
+            }
         }
     }
 
@@ -353,6 +379,19 @@ class AppUI {
         const game = gameManager.currentGame;
         this.currentHintDisplayed = null;
         this.showScreen('completed');
+
+        // Track game completion
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'game_completed', {
+                'event_category': 'game',
+                'event_label': game.isWin ? 'win' : 'loss',
+                'value': game.isWin ? game.guesses.length : 0,
+                'guesses': game.guesses.length,
+                'time_seconds': Math.floor(game.completionTime || 0),
+                'hints_used': game.hintsUsed,
+                'location_hint_used': game.locationHintUsed
+            });
+        }
 
         // Set result icon and title
         if (game.isWin) {
@@ -431,6 +470,13 @@ class AppUI {
         this.elements.maxStreak.textContent = stats.maxStreak;
 
         this.elements.statsModal.classList.remove('hidden');
+
+        // Track stats view
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'stats_viewed', {
+                'event_category': 'engagement'
+            });
+        }
     }
 
     hideStatsModal() {
@@ -439,6 +485,13 @@ class AppUI {
 
     showHowToPlayModal() {
         this.elements.howToPlayModal.classList.remove('hidden');
+
+        // Track how to play view
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'how_to_play_viewed', {
+                'event_category': 'engagement'
+            });
+        }
     }
 
     hideHowToPlayModal() {
