@@ -229,6 +229,18 @@
       "location": "West London"
     },
     {
+      "name": "Turnham Green",
+      "lines": ["District", "Piccadilly"],
+      "trivia": "A key interchange in Chiswick, serving both the District and Piccadilly lines with separate platforms.",
+      "location": "West London"
+    },
+    {
+      "name": "Barons Court",
+      "lines": ["District", "Piccadilly"],
+      "trivia": "Strategically located between Earl's Court and Hammersmith, serving the affluent West Kensington area.",
+      "location": "West London"
+    },
+    {
       "name": "Farringdon",
       "lines": ["Circle", "Hammersmith & City", "Metropolitan", "Elizabeth", "National Rail"],
       "trivia": "A major Elizabeth line hub connecting to Thameslink services, serving the historic Smithfield Market area.",

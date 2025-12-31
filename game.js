@@ -102,7 +102,38 @@ class GameManager {
         }
 
         // Fuzzy match (1 character difference)
-        return this.isOneCharacterDifferent(normalizedGuess, normalizedStation);
+        if (this.isOneCharacterDifferent(normalizedGuess, normalizedStation)) {
+            return true;
+        }
+
+        // Check if the guessed station has the same line combination
+        const guessedStation = this.findStationByNormalizedName(normalizedGuess);
+        if (guessedStation && this.hasSameLines(guessedStation, station)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    // Find station by normalized name
+    findStationByNormalizedName(normalizedName) {
+        return this.stationsData.stations.find(station =>
+            this.normalizeStationName(station.name) === normalizedName
+        );
+    }
+
+    // Check if two stations have the same line combination
+    hasSameLines(station1, station2) {
+        // Create sorted arrays of line names for comparison
+        const lines1 = [...station1.lines].sort();
+        const lines2 = [...station2.lines].sort();
+
+        // Check if arrays have same length and same elements
+        if (lines1.length !== lines2.length) {
+            return false;
+        }
+
+        return lines1.every((line, index) => line === lines2[index]);
     }
 
     // Seeded random number generator for consistent daily stations
