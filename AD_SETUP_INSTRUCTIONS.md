@@ -2,9 +2,11 @@
 
 ## ✅ Ads Have Been Added!
 
-Two ad placements have been added to your website:
-1. **Welcome Screen** - Below the welcome buttons
-2. **Completed Screen** - After the game ends and "View Stats" button
+Two vertical sidebar ad placements have been added to your website:
+1. **Left Sidebar** - Vertical ad on the left side of the game
+2. **Right Sidebar** - Vertical ad on the right side of the game
+
+**Note:** Sidebar ads only show on desktop (screen width > 1100px). They're hidden on tablets and mobile for better user experience.
 
 ## 🚀 How to Activate the Ads
 
@@ -32,7 +34,7 @@ Once approved, you'll receive:
 
 In `index.html`, find and replace these placeholders:
 
-**Ad 1 (Welcome Screen) - Line ~46:**
+**Ad 1 (Left Sidebar) - Line ~23:**
 ```html
 <!-- REPLACE THIS: -->
 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -40,10 +42,10 @@ data-ad-slot="XXXXXXXXXX"
 
 <!-- WITH YOUR REAL IDS: -->
 data-ad-client="ca-pub-1234567890123456"  ← Your Publisher ID
-data-ad-slot="1234567890"  ← Your Ad Slot ID for Welcome Screen
+data-ad-slot="1234567890"  ← Your Ad Slot ID for Left Sidebar
 ```
 
-**Ad 2 (Completed Screen) - Line ~130:**
+**Ad 2 (Right Sidebar) - Line ~137:**
 ```html
 <!-- REPLACE THIS: -->
 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -51,8 +53,10 @@ data-ad-slot="YYYYYYYYYY"
 
 <!-- WITH YOUR REAL IDS: -->
 data-ad-client="ca-pub-1234567890123456"  ← Your Publisher ID
-data-ad-slot="0987654321"  ← Your Ad Slot ID for Completed Screen
+data-ad-slot="0987654321"  ← Your Ad Slot ID for Right Sidebar
 ```
+
+**Important:** Use "Vertical" ad format (160x600 or similar) in your AdSense settings for best results!
 
 ### Step 5: Deploy and Wait
 - Commit and push your changes to GitHub
@@ -130,10 +134,24 @@ If you see this in AdSense:
 ## Current Ad Locations in Code
 
 **File: index.html**
-- Ad 1: Lines ~44-58 (Welcome Screen)
-- Ad 2: Lines ~128-142 (Completed Screen)
+- Ad 1: Lines ~21-35 (Left Sidebar)
+- Ad 2: Lines ~135-149 (Right Sidebar)
 
 **File: styles.css**
-- Ad styling: Lines ~680-705
+- Sidebar layout: Lines ~18-27
+- Ad styling: Lines ~691-730
+
+**Layout Structure:**
+```
+┌──────────┬──────────────┬──────────┐
+│          │              │          │
+│  Left    │     Game     │  Right   │
+│  Ad      │   Content    │  Ad      │
+│  160px   │   600px      │  160px   │
+│          │              │          │
+└──────────┴──────────────┴──────────┘
+```
+
+On screens < 1100px wide, sidebar ads are hidden and game takes full width.
 
 Good luck with monetization! 🎉
