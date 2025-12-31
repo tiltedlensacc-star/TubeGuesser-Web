@@ -676,3 +676,30 @@ main {
         grid-template-columns: 1fr;
     }
 }
+
+/* Ad Container Styles */
+.ad-container {
+    margin: 24px auto;
+    padding: 16px;
+    max-width: 100%;
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 8px;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-container ins {
+    display: block !important;
+    min-height: 90px;
+}
+
+/* Responsive ad sizing */
+@media (max-width: 768px) {
+    .ad-container {
+        margin: 16px auto;
+        padding: 12px;
+    }
+}
